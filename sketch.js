@@ -15,8 +15,8 @@ function setup() {
 }
 
 function draw() {
-  background(255,255,255);  
-  Engine.run(engine);
+  background(0,0,0);  
+  Engine.update(engine);
   for(var k = 0; k <=width; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
