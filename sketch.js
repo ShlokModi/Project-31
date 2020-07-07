@@ -12,11 +12,6 @@ function setup() {
   engine = Engine.create();
 	world = engine.world;
   ground = new Ground(240,780,480,40);
-}
-
-function draw() {
-  background(0,0,0);  
-  Engine.update(engine);
   for(var k = 0; k <=width; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
@@ -40,11 +35,17 @@ function draw() {
     
     plinkos.push(new Plinko(j,375));
   }
-  if(frameCount%90===0){
+
+}
+
+function draw() {
+  background(0,0,0);  
+  Engine.update(engine);
+  ground.display();
+   if(frameCount%90===0){
     particles.push(new Particle(random(width/2-10, width/2+10), 10,10));
 
   }
-  ground.display();
   for(var j = 0; j < particles.length; j++) {
 
     particles[j].display();
